@@ -1,0 +1,502 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spotify</title>
+    <link rel="shortcut icon" href="images/oipc.png" type="image/x-icon">
+    <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    
+        html, body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            background: linear-gradient(black, rgb(139, 0, 139), #c98200a8, black);
+        }
+    
+        #header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+    
+        #Saldo {
+            font-size: 10pt;
+            background-color: rgba(2, 204, 2, 0);
+            padding: 10px 15px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);
+            border: 2px solid white;
+        }
+    
+        div#container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            align-items: center;
+            margin: auto;
+            max-width: 600px;
+            background-color: rgba(128, 128, 128, 0.342);
+            padding: 20px 30px;
+            border-radius: 15px;
+        }
+    
+        div#container2 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            align-items: center;
+            margin: auto;
+            max-width: 600px;
+        }
+    
+        div#container3 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            align-items: center;
+            margin: auto;
+            max-width: 600px;
+            background-color: rgba(128, 128, 128, 0.342);
+            padding: 20px 30px;
+            border-radius: 15px;
+        }
+
+        div#container4 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            align-items: center;
+            margin: auto;
+            max-width: 600px;
+            background-color: rgba(128, 128, 128, 0.342);
+            padding: 20px 30px;
+            border-radius: 15px;
+        }
+
+        div#container8 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            align-items: center;
+            margin: auto;
+            max-width: 600px;
+            background-color: rgba(128, 128, 128, 0.342);
+            padding: 20px 30px;
+            border-radius: 15px;
+        }
+
+        div#container9 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            align-items: center;
+            margin: auto;
+            max-width: 600px;
+            background-color: rgba(128, 128, 128, 0.342);
+            padding: 20px 30px;
+            border-radius: 15px;
+        }
+
+        div#container5 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+            align-items: center;
+            margin: auto;
+            max-width: 600px;
+            background-color: rgba(128, 128, 128, 0.342);
+            padding: 20px 30px;
+            border-radius: 15px;
+        }
+    
+        @keyframes pulse {
+            0% {
+            transform: scale(1);
+            }
+            50% {
+            transform: scale(1.05);
+            }
+            100% {
+            transform: scale(1);
+            }
+        }
+    
+        .pulsating-button {
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Esconder inputs de rádio */
+        .rating input {
+            display: none;
+        }
+
+        /* Estilo inicial das estrelas oca */
+        .rating label {
+            cursor: pointer;
+            font-size: 30px;
+            color: #ccc; /* Cor das estrelas oca */
+        }
+
+        /* Quando o input de rádio está marcado, muda a cor das estrelas */
+        .rating input:checked ~ label {
+            color: #FFD700; /* Cor das estrelas coloridas */
+        }
+
+        /* Inverter a ordem das estrelas */
+        .rating {
+            direction: rtl;
+            display: flex;
+            gap: 20px;
+        }
+
+
+    </style>
+    </head>
+    <body>
+    <header class="container-fluid mt-3 px-4" id="header">
+        <img src="images/logo.png" style="width: 160px; height: 45px;" alt="">
+        <h5 class="text-light" id="Saldo">Saldo: R$<span id="Saldo-value">53.52</span></h5>
+    </header>
+    <hr>
+    
+    <div id="content" class="text-center" style="display: block;">
+        <div class="text-center text-LIGHT my-3" style="opacity: 60%; display: block;" id="container8">PARA GANHAR E VIRAR SÓCIO DO SPOTIFY, <strong style="color: rgb(0, 255, 0);">COMECE A AVALIAR AS MÚSICAS</strong> ABAIXO!</div>
+        <div class="alert alert-success alert-dismissible fade show mx-3" role="alert">
+            🔔 Você acaba de ganhar <strong>1 licença gratuita</strong>! Aproveite você já <strong>ganhou +R$53.52</strong>!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="container c1 mb-5" id="container">
+            <span style="font-size: 15pt; color: white;"><strong>Felipe e Rodrigo - Média Boa</strong></span>
+            <img src="images/capa1.jpg" width="100%" alt="">
+            <audio id="audioPlayer" controls="" style="width: 100%; background-color: #f4f4f4; border-radius: 10px; padding: 10px;">
+                <source src="media/music1.mp3" type="audio/mpeg">
+                Seu navegador não suporta a reprodução de áudio.
+            </audio>
+
+            <div class="container" style="display: flex; flex-direction: row; gap: 10px; text-align: left; align-items: left; width: 100%;">
+                <img src="cantor1.jfif" alt="" style="width: 45px; height: 45px; border-radius: 50%;">
+                <div style="display: flex; flex-direction: column; text-align: left;">
+                    <span style="font-size: 14px; color: rgb(255, 255, 255)"><strong>Felipe e Rodrigo</strong></span>
+                    <span style="font-size: 14px; color: gray;">Lançamento</span>
+                </div>
+
+            </div>
+            <div class="rating">
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1">☆</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2">☆</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3">☆</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4">☆</label>
+                <input type="radio" id="star5" name="rating" value="5"><label for="star5">☆</label>
+            </div>
+              
+            <h5 class="text-light">Recomendaria para um amigo(a)?</h5>
+            <div style="display: flex; justify-content: center; gap: 40px;">
+                <button class="btn bg-danger text-white" id="btn-nao-recomenda1" style="width: 120px;">Não</button>
+                <button class="btn bg-success text-light" id="btn-sim-recomenda1" style="width: 120px;">Sim</button>
+            </div>
+              
+            <h5 class="text-light">Gostou da música?</h5>
+            <div style="display: flex; justify-content: center; gap: 40px;">
+                <button class="btn bg-danger text-white" id="btn-nao" style="width: 120px;" onclick="addBtnObrigado(this.parentNode)">Não gostei</button>
+                <button class="btn bg-success text-light" id="btn-sim" style="width: 120px;" onclick="addBtnObrigado(this.parentNode)">Gostei</button>
+            </div>  
+        </div>
+    </div>
+
+    <div id="content7" class="text-center" style="display: block;">
+        <div class="container c1 mb-5" id="container">
+            <span style="font-size: 15pt; color: white;"><strong>Marília Medonça - Graveto</strong></span>
+            <img src="images/capa3.jpg" width="100%" alt="">
+            <audio id="audioPlayer3" controls="" style="width: 100%; background-color: #f4f4f4; border-radius: 10px; padding: 10px;">
+                <source src="media/music3.mp3" type="audio/mpeg">
+                Seu navegador não suporta a reprodução de áudio.
+            </audio>
+
+            <div class="container" style="display: flex; flex-direction: row; gap: 10px; text-align: left; align-items: left; width: 100%;">
+                <img src="cantor3.jfif" alt="" style="width: 45px; height: 45px; border-radius: 50%;">
+                <div style="display: flex; flex-direction: column; text-align: left;">
+                    <span style="font-size: 14px; color: rgb(255, 255, 255)"><strong>Marília Medonça</strong></span>
+                    <span style="font-size: 14px; color: gray;">Official</span>
+                </div>
+
+            </div>
+            <div class="rating">
+                <input type="radio" id="star11" name="rating" value="11"><label for="star11">☆</label>
+                <input type="radio" id="star12" name="rating" value="12"><label for="star12">☆</label>
+                <input type="radio" id="star13" name="rating" value="13"><label for="star13">☆</label>
+                <input type="radio" id="star14" name="rating" value="14"><label for="star14">☆</label>
+                <input type="radio" id="star15" name="rating" value="15"><label for="star15">☆</label>
+            </div>
+              
+            <h5 class="text-light">Recomendaria para um amigo(a)?</h5>
+            <div style="display: flex; justify-content: center; gap: 40px;">
+                <button class="btn bg-danger text-white" id="btn-nao-recomenda3" style="width: 120px;">Não</button>
+                <button class="btn bg-success text-light" id="btn-sim-recomenda3" style="width: 120px;">Sim</button>
+            </div>
+              
+            <h5 class="text-light">Gostou da música?</h5>
+            <div style="display: flex; justify-content: center; gap: 40px;">
+                <button class="btn bg-danger text-white" id="btn-nao" style="width: 120px;" onclick="addBtnObrigado3(this.parentNode)">Não gostei</button>
+                <button class="btn bg-success text-light" id="btn-sim" style="width: 120px;" onclick="addBtnObrigado3(this.parentNode)">Gostei</button>
+            </div>  
+        </div>
+    </div>
+
+
+    <div id="content2" class="text-center" style="display: block;">
+        <div class="container c1 mb-5" id="container">
+            <span style="font-size: 15pt; color: white;"><strong>Turma do Pagode - Camisa 10</strong></span>
+            <img src="images/capa2.jpg" width="100%" alt="">
+            <audio id="audioPlayer2" controls="" style="width: 100%; background-color: #f4f4f4; border-radius: 10px; padding: 10px;">
+                <source src="media/music2.mp3" type="audio/mpeg">
+                Seu navegador não suporta a reprodução de áudio.
+            </audio>
+
+            <div class="container" style="display: flex; flex-direction: row; gap: 10px; text-align: left; align-items: left; width: 100%;">
+                <img src="images/cantor2.png" alt="" style="width: 45px; height: 45px; border-radius: 50%;">
+                <div style="display: flex; flex-direction: column; text-align: left;">
+                    <span style="font-size: 14px; color: rgb(255, 255, 255)"><strong>Turma do Pagode</strong></span>
+                    <span style="font-size: 14px; color: gray;">Música Oficial</span>
+                </div>
+
+            </div>
+            <div class="rating">
+                <input type="radio" id="star6" name="rating" value="1"><label for="star6">☆</label>
+                <input type="radio" id="star7" name="rating" value="2"><label for="star7">☆</label>
+                <input type="radio" id="star8" name="rating" value="3"><label for="star8">☆</label>
+                <input type="radio" id="star9" name="rating" value="4"><label for="star9">☆</label>
+                <input type="radio" id="star10" name="rating" value="5"><label for="star10">☆</label>
+            </div>
+              
+              
+              
+              
+            <h5 class="text-light">Recomendaria para um amigo(a)?</h5>
+            <div style="display: flex; justify-content: center; gap: 40px;">
+                <button class="btn bg-danger text-white" id="btn-nao-recomenda2" style="width: 120px;">Não</button>
+                <button class="btn bg-success text-light" id="btn-sim-recomenda2" style="width: 120px;">Sim</button>
+            </div>
+              
+            <h5 class="text-light">Gostou da música?</h5>
+            <div style="display: flex; justify-content: center; gap: 40px;">
+                <button class="btn bg-danger text-white" id="btn-nao" style="width: 120px;" onclick="addBtnObrigado2(this.parentNode)">Não gostei</button>
+                <button class="btn bg-success text-light" id="btn-sim" style="width: 120px;" onclick="addBtnObrigado2(this.parentNode)">Gostei</button>
+            </div>
+            
+              
+        </div>
+
+
+        </div>
+
+    
+    
+    
+    
+    <div class="container p-3 text-center bg-light c3 rounded" id="container3" style="display: none;">
+        <h3 class="mb-3"><strong>SEU SALDO SUBIU</strong></h3>
+        <img src="images/trofeu.png" class="rounded" width="300px" alt="">
+        <div class="my-3"><strong>PARABÉNS!</strong></div>
+        <div class="my-3">Para cadastrar sua chave PIX e realizar o seu <strong>PRIMEIRO SAQUE</strong>, clique no botão abaixo:</div>
+        <button class="btn btn-success pulsating-button" style="width: 100%; font-size: 15pt;" onclick="irPraChave()">SACAR AGORA</button>
+    </div>
+
+    <div class="container p-3 text-center bg-light c3 rounded" id="container4" style="display: none;">
+        <h3 class="mb-3">Realizar Saque</h3>
+        <div class="my-3">Aqui na página de <span style="color: blue;">SAQUES</span> você realiza o saque de todas as suas avaliações.</div>
+        <h5 class="text-light" style="background-color: rgb(0, 224, 0); border: none;" id="Saldo">Saldo: R$<span id="Saldo-final">132.74</span></h5>
+        <div class="my-3">Informe sua chave PIX cadastrada e o valor que deseja sacar:</div>
+        <form action="#" id="formu">
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Exemplo: CPF, E-mail, CNPJ... " required=""><br>
+            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Exemplo: 10,00 " required=""><br>
+            <input type="checkbox"><span style="margin-left: 5px; font-size: 13pt;">Primeira vez no <strong>APP NOVO</strong></span>
+            <button class="btn btn-success pulsating-button my-3" style="width: 100%; font-size: 15pt;">SACAR AGORA</button>
+        </form>
+    </div>
+
+    <div class="container p-3 text-center bg-light c3 rounded" id="container5" style="display: none;">
+        <h3 class="mb-3 text-danger"><strong>ERRO 404</strong></h3>
+        <h3 class="mb-3 text-danger"><strong>CHAVE PIX NÃO CADASTRADA</strong></h3>
+        <h3 class="mb-3 text-primary"><strong>Parece que você ainda não ativou seu cadastro</strong></h3>
+        <div class="my-3">Para efetuar o saque e também continuar avaliando mais marcas, é necessário realizar seu cadastro!</div>
+        <div class="my-3">Leva menos de 5 minutos.</div>
+        <div class="my-3">Depois você já vai conseguir efetuar o saque direto para sua chave PIX.</div>
+        <button class="btn btn-success pulsating-button" style="width: 100%; font-size: 15pt;" onclick="fazercadastro()">REALIZAR MEU CADASTRO</button>
+    </div>
+
+    <div class="container p-3 text-center bg-light c3 rounded" id="container6" style="display: none;">
+        <h3 class="mb-3 text-primary"><strong>VAMOS ATIVAR SEU CADASTRO!</strong></h3>
+        <div class="my-3">A única forma de ativar o cadastro é fazendo o pagamento da taxa <span style="color: blue;">TAXA DE INSCRIÇÃO</span> no valor de <span style="color: blue;"><strong>R$ 19,90</strong></span>.</div>
+        <div class="my-3">Este custo de TAXA DE INSCRIÇÃO vai ser <span style="color: blue;">100% devolvido</span> para você juntamente com seu primeiro saque.</div>
+        <h3 class="mb-3 text-primary"><strong>2° PASSO</strong></h3>
+        <div class="my-3">Após realizar o pagamento, você receberá um e-mail contendo as informações do aplicativo e já conseguirá <span style="color: blue;">acessar, solicitar o saque e fazer mais avaliações</span> para lucrar mais.</div>
+        <button class="btn btn-success pulsating-button" style="width: 100%; font-size: 15pt;"><a href="https://pay.sunize.com.br/UCrpOyWB" style="text-decoration: none; color: white;">REALIZAR MEU CADASTRO</a></button>
+    </div>
+
+
+    <div class="text-center text-LIGHT my-3" style="opacity: 60%; display: block;" id="container9">Todos os direitos reservados - 100% Seguro e Confiável</div>
+    
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+    <script>
+        
+        var btnSimRecomenda2 = document.getElementById('btn-sim-recomenda2')
+        var btnNaoRecomenda2 = document.getElementById('btn-nao-recomenda2')
+        var btnSimRecomenda1 = document.getElementById('btn-sim-recomenda1')
+        var btnNaoRecomenda1 = document.getElementById('btn-nao-recomenda1')
+        var btnSimRecomenda3 = document.getElementById('btn-sim-recomenda3')
+        var btnNaoRecomenda3 = document.getElementById('btn-nao-recomenda3')
+        var container = document.getElementById('content')
+        var container3 = document.getElementById('container3')
+        var container4 = document.getElementById('container4')
+        var container5 = document.getElementById('container5');
+        var container6 = document.getElementById('container6');
+        var btnObrigado = '<div class="alert alert-success mx-3" role="alert">Obrigado por avaliar! Você recebeu: +R$<span id="received-amount">39.61</span></div>';
+        var receivedAmount = 80.00;
+        var content = document.getElementById('content')
+        var formu = document.getElementById('formu')
+        
+        btnSimRecomenda1.addEventListener('click', function(){
+            btnNaoRecomenda1.style.opacity = '50%'
+            btnSimRecomenda1.style.opacity = '100%'
+        })
+
+        btnSimRecomenda2.addEventListener('click', function(){
+            btnNaoRecomenda2.style.opacity = '50%'
+            btnSimRecomenda2.style.opacity = '100%'
+        })
+
+        btnNaoRecomenda1.addEventListener('click', function(){
+            btnSimRecomenda1.style.opacity = '50%'
+            btnNaoRecomenda1.style.opacity = '100%'
+        })
+
+        btnNaoRecomenda2.addEventListener('click', function(){
+            btnSimRecomenda2.style.opacity = '50%'
+            btnNaoRecomenda2.style.opacity = '100%'
+        })
+
+        btnNaoRecomenda3.addEventListener('click', function(){
+            btnSimRecomenda3.style.opacity = '50%'
+            btnNaoRecomenda3.style.opacity = '100%'
+        })
+
+        btnSimRecomenda3.addEventListener('click', function(){
+            btnSimRecomenda3.style.opacity = '100%'
+            btnNaoRecomenda3.style.opacity = '50%'
+        })
+            
+        
+    
+        function addBtnObrigado(e) {
+            e.innerHTML = btnObrigado;
+            increaseSaldo(93.13)
+            var audioPlayer = document.getElementById('audioPlayer');
+            audioPlayer.pause();
+            var audio = new Audio('./cash.mp3');
+            audio.play();
+        }
+    
+        function addBtnObrigado2(e) {
+            e.innerHTML = btnObrigado;
+            increaseSaldo(132.74)
+            content.style.display ="none"
+            document.getElementById('content2').style.display ="none"
+            document.getElementById('content7').style.display ="none"
+            container3.style.display ="block"
+            var audioPlayer = document.getElementById('audioPlayer2');
+            audioPlayer.pause();
+            var audio = new Audio('./cash.mp3');
+            audio.play();
+        }
+
+        function addBtnObrigado3(e) {
+            e.innerHTML = btnObrigado;
+            var audioPlayer = document.getElementById('audioPlayer3');
+            audioPlayer.pause();
+            var audio = new Audio('./cash.mp3');
+            audio.play();
+        }
+    
+        function increaseSaldo(v) {
+            var increment = 0.01;
+            var interval = 1; // Tempo em milissegundos entre cada incremento
+            var finalAmount = v;
+            var receivedAmountElement = document.getElementById('Saldo-value');
+            var SaldoFinal = document.getElementById('Saldo-final');
+    
+            var timer = setInterval(function() {
+                receivedAmount += increment;
+                receivedAmountElement.textContent = receivedAmount.toFixed(2);
+                SaldoFinal.textContent = receivedAmount.toFixed(2);
+    
+                if (receivedAmount >= finalAmount) {
+                    clearInterval(timer);
+                    receivedAmountElement.textContent = finalAmount.toFixed(2);
+                    SaldoFinal.textContent = finalAmount.toFixed(2);
+                }
+            }, interval);
+        }
+
+        function irPraChave(){
+            container3.style.display ="none"
+            container4.style.display ="block"
+        }
+
+        
+
+        formu.addEventListener('submit', function irPraChaveNCadastrada(e){
+            e.preventDefault()
+            container4.style.display ="none"
+            container5.style.display ="block"
+        }) 
+
+        function fazercadastro(){
+            container5.style.display ="none"
+            container6.style.display ="block"
+        }
+        
+    </script>
+    <script>
+        let prefix = ["https://payment.hotmart.com", "https://pay.hotmart.com", "https://go.hotmart.com", "https://checkout.pepper.com.br/?p=123095&o=146296"];
+    
+    function getParams() {
+        let t = "",
+            e = window.top.location.href,
+            r = new URL(e);
+        if (null != r) {
+            let a = r.searchParams.get("utm_source"),
+                n = r.searchParams.get("utm_medium"),
+                o = r.searchParams.get("utm_campaign"),
+                m = r.searchParams.get("utm_term"),
+                c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
+        }
+        return t
+    }! function() {
+        var t = new URLSearchParams(window.location.search);
+        t.toString() && document.querySelectorAll("a").forEach(function(e) {
+            for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
+        })
+    }();
+    </script>
+    
+    <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    
+    
+    </body></html>
