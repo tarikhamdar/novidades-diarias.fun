@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /products/%22https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/E2023040608/E2023040608_COMBO_SIAGE_LISO_INTENSO_KIT_COMPLETO_PRINCIPAL_1.jpg%22</pre>
+</body>
+</html>
