@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /products/%22https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/E2023101506/1b9a0851-25e3-4a89-b927-18a6d83065b6-e2023101506-siage-nutri-rose-shampoo-condicionador-leave-in.jpg%22</pre>
+</body>
+</html>
