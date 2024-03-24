@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://betia.app/wp-content/uploads/2023/12/IA-FAVICON.png" sizes="32x32">
+    <link rel="icon" href="https://betia.app/wp-content/uploads/2023/12/IA-FAVICON.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://betia.app/wp-content/uploads/2023/12/IA-FAVICON.png">
+    <script src="js/script.js"></script>
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <title>CONTA BUGADA</title>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NF09EVYJ1J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NF09EVYJ1J');
+</script>
+
+<body class="center-container">
+    <div class="email-warning" style="color: red; display: none;">Digite um email para ativar o bug.</div>
+    
+    <div class="display">
+        <h1 class="title" id="titleText">Digite seu e-mail para <span style="color: #3BD734;">Ativar</span> a conta
+                bugada
+        </h1>
+        <!-- Início do formulário de solicitação de e-mail -->
+    <div class="email-request">
+        <form>
+            <input type="email" id="email" name="email" class="animated-placeholder"
+                placeholder="Digite aqui seu e-mail" required="">
+        </form>
+    </div>
+    <div class="email-invalid" style="color: red; display: none;">Digite seu e-mail aqui.</div>
+    <!-- Fim do formulário de solicitação de e-mail -->
+        <div class="overlay" id="overlay"></div>
+        <label class="switch" id="toggleSwitch" onclick="toggleLoader()">
+            <input type="checkbox" class="input__check">
+            <span class="slider"></span>
+        </label>
+        <div class="loader" id="loader">
+            <div class="orbe" style="--index: 0"></div>
+            <div class="orbe" style="--index: 1"></div>
+            <div class="orbe" style="--index: 2"></div>
+            <div class="orbe" style="--index: 3"></div>
+            <div class="orbe" style="--index: 4"></div>
+        </div>
+        <div class="loadingText" id="loadingText">Ativando <span class="loadingDots">...</span></div>
+        <div class="display2">
+            <div class="successMessage" id="successMessage">Conta bugada ativada!</div>
+            <div class="container" id="celebrateCheckbox">
+                <input type="checkbox" id="successCheckbox" checked disabled>
+                <div class="checkmark"></div>
+                <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" class="celebrate">
+                    <polygon points="0,0 10,10"></polygon>
+                    <polygon points="0,25 10,25"></polygon>
+                    <polygon points="0,50 10,40"></polygon>
+                    <polygon points="50,0 40,10"></polygon>
+                    <polygon points="50,25 40,25"></polygon>
+                    <polygon points="50,50 40,40"></polygon>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <script language="javascript">
+document.write(unescape('%3C%61%20%68%72%65%66%3D%22%68%74%74%70%73%3A%2F%2F%74%72%65%76%6F%62%65%74%2E%6E%65%74%2F%72%65%67%69%73%74%65%72%3F%63%6F%64%65%3D%51%4E%45%4F%4C%31%5A%59%38%4A%22%20%74%61%72%67%65%74%3D%22%5F%62%6C%61%6E%6B%22%20%63%6C%61%73%73%3D%22%62%74%6E%22%20%69%64%3D%22%77%61%74%63%68%42%74%6E%22%0A%20%20%20%20%20%20%20%20%6F%6E%63%6C%69%63%6B%3D%22%73%68%6F%77%57%61%74%63%68%42%75%74%74%6F%6E%28%29%22%3E%41%43%45%53%53%45%0A%20%20%20%20%20%20%20%20%41%51%55%49%3C%2F%61%3E'));
+</script>
+    <script>
+        function toggleLoader() {
+            var emailInput = document.getElementById("email");
+            var emailValue = emailInput.value.trim();
+            var emailWarning = document.querySelector('.email-warning');
+            var emailInvalid = document.querySelector('.email-invalid');
+            var switchInput = document.querySelector('.input__check');
+
+            // Função para verificar se o domínio do e-mail é válido
+            function isValidEmailDomain(email) {
+                var validDomains = [
+                    "gmail.com",
+                    "hotmail.com",
+                    "outlook.com",
+                    "yahoo.com",
+                    "icloud.com",
+                    "mail.com",
+                    "aol.com",
+                    "yandex.com",
+                    "protonmail.com",
+                    "zoho.com",
+                    "gmx.com",
+                    "gmx.net",
+                    "hotmail.co.uk",
+                    "hotmail.fr",
+                    "live.com",
+                    "msn.com",
+                    "yahoo.co.jp",
+                    "yahoo.co.in",
+                    "yahoo.co.uk",
+                    "naver.com",
+                    "daum.net",
+                    "nate.com",
+                    "qq.com",
+                    "163.com",
+                    "sina.com",
+                    "sohu.com",
+                    "fastmail.com",
+                    "tutanota.com",
+                    "inbox.com",
+                    "mail.ru",
+                    "bk.ru",
+                    "list.ru",
+                    "rambler.ru"
+                ];
+
+                var emailDomain = email.split('@')[1]; // Obtém o domínio do e-mail
+                return validDomains.includes(emailDomain);
+            }
+
+            // Verifica se o campo de e-mail está vazio
+            if (!emailValue) {
+                emailWarning.style.display = 'block';
+                emailInvalid.style.display = 'none';
+                switchInput.checked = false; // Desmarca o switch
+                return;
+            } else if (!isValidEmailDomain(emailValue)) { // Verifica se o domínio do e-mail é inválido
+                emailInvalid.style.display = 'block';
+                emailWarning.style.display = 'none';
+                switchInput.checked = false; // Desmarca o switch
+                return;
+            } else {
+                emailWarning.style.display = 'none';
+                emailInvalid.style.display = 'none';
+            }
+
+            var overlay = document.getElementById("overlay");
+            var loader = document.getElementById("loader");
+            var isChecked = switchInput.checked;
+            var emailBlock = document.querySelector('.email-request');
+            var titleText = document.getElementById("titleText");
+            var loadingText = document.getElementById("loadingText");
+            var successMessage = document.getElementById("successMessage");
+            var celebrateCheckbox = document.getElementById("celebrateCheckbox");
+            var watchBtn = document.getElementById("watchBtn");
+
+            if (isChecked) {
+                overlay.style.display = "block";
+                loader.style.display = "block";
+                titleText.style.display = "none";
+                loadingText.style.display = "flex";
+                emailBlock.style.display = "none"; // Faz o bloco de e-mail desaparecer
+
+                startLoaderAnimation();
+
+                // Desativa o switch e remove o listener de eventos após ser ativado
+                toggleSwitch.style.pointerEvents = "none";
+                setTimeout(function () {
+                    overlay.style.display = "none";
+                    loader.style.display = "none";
+                    titleText.style.display = "none";
+                    loadingText.style.display = "none";
+                    successMessage.style.display = "block";
+                    successCheckbox.style.display = "block";
+                    celebrateCheckbox.style.display = "flex";
+                    stopLoaderAnimation();
+                    watchBtn.style.display = "block";
+                    toggleSwitch.style.display = "none";
+                }, 5000);
+            }
+        }
+
+        function startLoaderAnimation() {
+            var loadingText = document.getElementById("loadingText");
+            var dots = document.querySelector(".loadingDots");
+            dots.style.animation = "dotAnimation 1s infinite"; // Adiciona animação aos pontos suspensivos
+            loadingText.style.display = "flex"; // Agora é um flex container
+        }
+
+        function stopLoaderAnimation() {
+            var orbs = document.querySelectorAll('.orbe');
+            orbs.forEach((orbe, index) => {
+                orbe.style.animationPlayState = "paused";
+            });
+            var dots = document.querySelector(".loadingDots");
+            dots.style.animation = "none"; // Pára a animação dos pontos suspensivos
+        }
+
+        function showWatchButton() {
+            var watchBtn = document.getElementById("watchBtn");
+            watchBtn.style.display = "none";
+        }
+
+        // Adicionado o evento ao carregar a página para iniciar a animação automaticamente
+        document.addEventListener("DOMContentLoaded", function () {
+            showWatchButton(); // Chama a função para ocultar o botão
+        });
+    </script>
+
+    <script>
+        document.getElementById('email').addEventListener('input', function () {
+            // Estimativa da largura média por caractere em pixels
+            var widthPerChar = 10;
+
+            // Calcula a largura com base no comprimento do texto digitado
+            var newWidth = Math.max(this.value.length * widthPerChar, 200); // 200px é a largura mínima
+
+            // Aplica a nova largura ao campo de entrada
+            this.style.width = newWidth + 'px';
+        });
+    </script>
+
+
+</body>
+
+</html>
